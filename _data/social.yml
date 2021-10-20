@@ -1,0 +1,16 @@
+# You can add other links if you want to but you will have to provide an image too. Just leave the url section blank if you don't
+# need a link to a particular site. We have provided some additional icons in assets/img folder. Check them out if you want to change.
+- url: https://m.facebook.com/club/
+  img: /assets/img/social/facebook.png
+
+- url: https://github.com/club/
+  img: /assets/img/social/github.png
+
+- url: https://www.instagram.com/club/
+  img: /assets/img/social/instagram.png
+
+- url: mailto:club@domain.com
+  img: /assets/img/social/mail.png
+
+- url: 
+  img: /assets/img/social/twitter.png

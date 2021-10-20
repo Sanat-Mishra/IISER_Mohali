@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{site.title}}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <link rel="stylesheet" href="{{'/assets/css/animation.css' | prepend: site.baseurl}}">
+    <script src="{{'/js/pastEvents.js' | prepend: site.baseurl}}"></script>
+    <style>
+        .bgImg {
+            background-image: url('{{page.pastEventsBackgroundImage | prepend: site.baseurl}}');
+            background-repeat: repeat-y;
+            width: 100%;
+        }
+
+        .bgColor {
+            background-color: {{page.pastEventsBackgroundColor}};
+        }
+
+        body {
+            font-family: "{{page.font}}";
+            color: {{page.fontColor}};
+        }
+
+        h1.pastEventHeading {
+                font-family: "{{page.headingFont}}";
+                text-align: center;
+                font-size: 2em;
+                color: {{page.headingFontColor}};
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                grid-template-rows: 20px 0;
+                grid-gap: 20px;
+        }
+            
+        h1.pastEventHeading:after,h1.pastEventHeading:before {
+            content: " ";
+            display: block;
+            border-bottom: 3px solid;
+            border-color: {{page.headingFontColor}};
+        }
+
+        .yearList {
+            margin-left: 5%;
+            margin-right: 10%;
+        }
+
+        .year {
+            padding-left: 8px;
+            padding-top: 2px;
+        }
+
+        .year:hover {
+            cursor: pointer;
+        }
+
+        #page-container {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #content-wrap {
+            padding-bottom: 8.5rem;    /* Footer height */
+        }
+
+        .button {
+            float: right;
+        }
+
+        .expandButton {
+            transform: rotate(90deg);
+        }
+
+        .collapseButton {
+            transform: rotate(-90deg);
+        }
+
+        .eventList {
+            margin-left: 5%;
+        }
+
+        a.eventListElement {
+            font-family: "{{page.font}}";
+            color: {{page.fontColor}};
+        }
+
+    </style>
+    <body style="background-color: {{page.pastEventsPageBackgroundColor}};">
+        <div id="page-container">
+            <div id="content-wrap">
+                {% include header.html %}
+                {% if page.backgroundImage != null %}
+                    {% assign cls = "bgImg" %}
+                {% else %}
+                    {% assign cls = "bgColor" %}
+                {% endif %}
+                {% assign eventsData=site.events | group_by:"year" | reverse %}
+                <section class={{cls}}>
+                    <h1 class="pastEventHeading">Past Events</h1>
+                    <ul class="animated2 slideRight yearList">
+                        {% for group in eventsData %}
+                            {% assign liId = "liYear" | append: group.name %}
+                            {% assign btnId = "btn" | append: group.name %}
+                            {% assign eventList = "" %}
+                            {% assign partOfWeekList = "" %}
+                            {% assign urlList = "" %}
+                            {% for event in group.items %}
+                                {% assign eventList = eventList | append: event.title | append: "," %}
+                                {% assign partOfWeekList = partOfWeekList | append: event. partOfWeek | append: "," %}
+                                {% assign urlList = urlList | append: event.linkToThisPage | append: "," %}
+                            {% endfor %}
+                            <li class="year" onclick="toggleEventList('{{liId}}', '{{btnId}}', '{{eventList}}', '{{partOfWeekList}}', '{{urlList}}', '{{site.baseurl}}')">
+                                <span style="font-size: 1.2em;">
+                                    {{group.name}}
+                                    <div class="button expandButton" id={{btnId}}>
+                                        >
+                                    </div>
+                                </span>
+                                <br>
+                                <div class="eventList" id={{liId}}></div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            </div>
+            {% include footer.html %}
+        </div>
+    </body>
+</html>

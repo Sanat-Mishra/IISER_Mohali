@@ -1,0 +1,16 @@
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 10%;
+    padding: 0px;
+}
+
+.imgLink {
+    transition: transform .2s;
+}
+
+.imgLink:hover {
+    transform: scale(1.2);
+}
