@@ -9,7 +9,39 @@ Follow [this](2021.igem.org/team:iiser_mohali) link to know more about this work
 ## Installation Instructions
 
 1. Go to the ```apk``` folder in the repository and transfer the file ```OSCCit Assistant.apk``` to your android device.
-2. Open the file in your android device and install. You may have to grant permission for installing apps from unknown sources for the app to install.
+2. Open the file in your android device and install. You may have to grant permission for installing apps from unknown sources for the app to install. In case your phone doesn't allow app installation due its own security settings, you need to follow the steps in [Development and Build Instructions](#download-and-build-instructionsfor-development-purposes).
+
+## Using the Sample Data
+
+Transfer the files inside the folder ```Sample Data``` to your android device. Then follow the instructions corresponding to the mode of operation.
+
+#### Spectrum Intensity Analyzer
+
+1. Open the app and select ```Spectrum Intensity Analyzer```.
+2. Press ```Open Gallery``` and select ```Sample.jpg``` from the location you stored the sample data into.
+3. Click on ```Choose Calibration Parameter``` button and click the ```Create New`` button.
+4. Click on the button at the bottom right corner of the new screen that appears.
+5. Select ```calib.jpg``` from ```Spectrum Intensity Analyzer Mode``` folder.
+6. Select the relevant cropping area(the area containing the spectrum) in the image that appears on the screen.
+7. Press ```Save```.
+8. Give a name to the calibration parameter you just created and click on ```Save```. You will be returned to the previous screen.
+9. Click on ```Choose Calibration Parameter``` and select the calibration parameter you just created from the dropdown.
+10. Click on ```Analyse```. The Intensity-Wavelength spectra would appear on the screen.
+
+#### Sample Concentration Analyzer
+
+1. Open the app and select ```Sample Concentration Analyzer```.
+2. Click on ```Choose Calibration Parameter``` and click the ```Create New``` Button. 
+3. Tap on the button at the bottom right corner of the new screen that appears.
+4. Select ```10.5.jpg``` from ```Sample Concentration Analyzer Mode``` folder. You can choose any image whose sample concentration is known.
+5. Select the relevant cropping area(the red part of the spectrum) in the image that appears on the screen.
+6. Press ```Save```.
+7. Give a name to the calibration parameter you just created and click on ```Save```. You will be returned to the previous screen.
+8. Click on ```Add Images of Known Sample Concentration``` button. Select the file ```10.5.jpg```. 
+9. Enter the concentration of the sample(10.5 in this case, same as the file name) in the dialog box that appears and press ```Continue```.
+10. The entry will be added and it will appear on the screen. Repeat the same procedure for all other sample images whose concentration is known(10.5, 14.0, 21.0, 42.0 in this case).
+11. Click on the ```Add Image of Unknown Sample Concentration``` button. Select the file ```28.jpg```.
+12. Press ```Get Unknown Concentration``` button. You will see a plot showing the Intensity-Concentration best fit and the concentration of the sample will appear below the screen.
 
 ## Download and Build Instructions(For development purposes)
 
