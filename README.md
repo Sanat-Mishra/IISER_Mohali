@@ -15,7 +15,7 @@ Follow [this](2021.igem.org/team:iiser_mohali) link to know more about this work
 
 Transfer the files inside the folder ```Sample Data``` to your android device. Then follow the instructions corresponding to the mode of operation.
 
-### Spectrum Intensity Analyzer
+#### Spectrum Intensity Analyzer
 
 1. Open the app and select ```Spectrum Intensity Analyzer```.
 2. Press ```Open Gallery``` and select ```Sample.jpg``` from the location you stored the sample data into.
@@ -28,7 +28,7 @@ Transfer the files inside the folder ```Sample Data``` to your android device. T
 9. Click on ```Choose Calibration Parameter``` and select the calibration parameter you just created from the dropdown.
 10. Click on ```Analyse```. The Intensity-Wavelength spectra would appear on the screen.
 
-### Sample Concentration Analyzer
+#### Sample Concentration Analyzer
 
 1. Open the app and select ```Sample Concentration Analyzer```.
 2. Click on ```Choose Calibration Parameter``` and click the ```Create New``` Button. 
