@@ -6,7 +6,12 @@ OSCCit assistant is an android app used for analyzing spectra obtained from the 
 
 Follow [this](2021.igem.org/team:iiser_mohali) link to know more about this work and the people behind it.
 
-## Download and Build Instructions
+## Installation Instructions
+
+1. Go to the ```apk``` folder in the repository and transfer the file ```OSCCit Assistant.apk``` to your android device.
+2. Open the file in your android device and install. You may have to grant permission for installing apps from unknown sources for the app to install.
+
+## Download and Build Instructions(For development purposes)
 
 1. Download and install [Android Studio](https://developer.android.com/studio).
 2. Clone this repository locally.
